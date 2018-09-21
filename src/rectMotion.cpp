@@ -30,3 +30,21 @@ void rectMotion::draw()
 	ofFill();
 	titleElementShader.end();
 }
+
+void rectMotion::update2()
+{
+	if (ofGetFrameNum()%153==0|| ofGetFrameNum() % 180 == 0 || ofGetFrameNum() % 140 == 0) {
+		
+		for (int i = 0; i<5; i++) { particles.push_back(ofRandom(0.0f,5.0f)); }
+	}
+	if (ofGetFrameNum() % 120 == 0) {
+		currentColor = currentColor == 0 ? 1 : 0;
+	}
+	
+	for (int i = particles.size() - 1; i >= 0; i--) {
+		particles[i].update();
+		if (!particles[i].isAlive) {
+			particles.erase(particles.begin() + i);
+		}
+	}
+}

@@ -18,4 +18,5 @@ public:
 	void setup();
 
 	void draw3(float* sound, bool kicked);
+	void draw();
 };

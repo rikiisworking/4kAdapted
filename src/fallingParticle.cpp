@@ -13,7 +13,7 @@ void fallingParticle::setup()
 	for (int i = 0; i < this->number_of_targets; i++) {
 		this->circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));	
 		this->circles.back().get()->setPhysics(1.5, 0.75, 0.1);
-		this->circles.back().get()->setup(this->box2d.getWorld(), ofRandom(150.0f, ofGetWidth() - 150.0f), ofRandom(ofGetHeight()), ofRandom(7.0f, 28.0f));
+		this->circles.back().get()->setup(this->box2d.getWorld(), ofRandom(150.0f, ofGetWidth() - 150.0f), ofRandom(ofGetHeight()), ofRandom(7.0f, 21.0f));
 		this->sizes.push_back(this->circles.back().get()->getRadius());
 		ofFloatColor  color = ofFloatColor(1.0, 1.0, 1.0, 0.0);
 		int color_type = ofRandom(3);

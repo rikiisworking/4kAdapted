@@ -92,10 +92,11 @@ void ofApp::update(){
 		}
 	}
 	else {
-		firework.update();
-		firework.kicked(kicked);
-
-		rectMotion.update(oscEngine.ampList, kicked);
+		//firework.update();
+		//firework.kicked(kicked);
+		firework.update2();
+		rectMotion.update2();
+		//rectMotion.update(oscEngine.ampList, kicked);
 		oscEngine.send(1,0.f, 0.f,960.0f, 400.0f);
 	}
 	drawMod = oscEngine.isPlayed;
@@ -126,7 +127,8 @@ void ofApp::draw(){
 			bodyMasker.draw3(tempHead, oscEngine.smoothed);
 		}
 		else if (drawMod == 3) {
-			arms.draw(kinectEngine.head.x, kinectEngine.head.y, oscEngine.smoothed);
+			arms.draw(kinectEngine.head.x*2, kinectEngine.head.y*2, oscEngine.smoothed);
+			//arms.draw(ofGetMouseX(), ofGetMouseY(), oscEngine.smoothed);
 			multipleBodies.draw2(oscEngine.smoothed);
 		}
 		else if (drawMod == 4) {
@@ -147,9 +149,11 @@ void ofApp::draw(){
 		}
 	}
 	else {
-		firework.draw();
+		//firework.draw();
+		firework.draw2();
 		rectMotion.draw();
-		titlePage.draw3(oscEngine.ampList, kicked);
+		//titlePage.draw3(oscEngine.ampList, kicked);
+		titlePage.draw();
 	}
 	kicked = false;
 	snared = false;

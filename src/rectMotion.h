@@ -6,6 +6,7 @@ public:
 	void setup();
 	void update(float* amp,bool kicked);
 	void draw();
+	void update2();
 	vector<rectMotionParticle> particles;
 	int currentColor;
 	ofShader titleElementShader;
