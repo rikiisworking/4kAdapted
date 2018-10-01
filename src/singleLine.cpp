@@ -21,7 +21,7 @@ void singleLine::draw(float * amps)
 		p[i2].clear();
 		p[i2].lineTo(0, 590.0f);
 		for (int i = 0; i < 256; i++) {
-			i2%2==0? p[i2].lineTo(ofPoint(i*ofGetWidth()/256, -ofClamp(amps[amp[i2][i] - 256 * i2], 0.0f, 1.3f) * 1600 + ofGetHeight())):
+			i2%2==0? p[i2].lineTo(ofPoint(i*ofGetWidth()/256, -ofClamp(amps[amp[i2][i] - 256 * i2], 0.0f, 1.3f) * 1600 + ofGetHeight())+30.0f):
 			p[i2].lineTo(ofPoint(i*ofGetWidth() / 256, +ofClamp(amps[amp[i2][i]-256*i2], 0.0f, 1.3f) *1600-30.0f));
 		}
 	}

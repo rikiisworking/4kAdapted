@@ -19,8 +19,8 @@ void shapeExpanding::update(float * amps,bool kick)
 		}
 	}
 	expandSpeed = kick ? expandSpeed + 3.5f : expandSpeed;
-	expandSpeed = expandSpeed + amps[25]/5.0f;
-	angle = kick ? angle + 1.5f : angle;
+	expandSpeed = expandSpeed + amps[25]*5.f;
+	angle = kick ? angle + 2.5f : angle;
 	if (expandSpeed > 1.0f) {
 		expandSpeed=expandSpeed - 0.3f;
 	}
@@ -58,9 +58,10 @@ void shapeExpanding::drawRectFromPosition(float * amps,ofVec2f lHand,ofVec2f rHa
 	for (int i = 0; i <80; i++) {
 		ofPushMatrix();
 		ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
-		float tempRotation = ofMap(ofDist(rHand.x, rHand.y, ofGetWidth() / 2, ofGetHeight() / 2), 0.f, 1101.45f, 1.f, 5.f, true);
+		//float tempRotation = ofMap(ofDist(rHand.x, rHand.y, ofGetWidth() / 2, ofGetHeight() / 2), 0.f, 1101.45f, 1.f, 5.f, true);
+		float tempRotation = lHand.angle(rHand)/35;
 		ofRotate((angle + sizes[i] / 5)*tempRotation);
-		float tempScale = ofMap(ofDist(lHand.x,lHand.y, ofGetWidth() / 2, ofGetHeight() / 2), 0.f, 1101.45f, 1.f, 6.5f, true);
+		float tempScale = ofMap(ofDist(lHand.x,lHand.y, rHand.x, rHand.y), 0.f, 1101.45f, 2.0f, 5.5f, true);
 		ofScale(ofPoint(tempScale, tempScale));
 		ofDrawRectangle(0, 0, sizes[i], sizes[i]);
 		ofPopMatrix();

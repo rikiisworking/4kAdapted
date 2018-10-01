@@ -5,6 +5,7 @@ public:
 	void setup(int xInterval=35,int yInterval=25);
 	void update(float* amps, ofVec2f lHand,ofVec2f rHand);
 	void draw(float x, float y, float * soundStrength);
+	void draw2(float x, float y, ofVec2f lHand, ofVec2f rHand, float* soundStrength);
 	void drawEach(float xPos, float yPos, float segLength, float inputX, float inputY);
 
 	ofFloatColor color1, color2;

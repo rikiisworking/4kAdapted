@@ -48,7 +48,7 @@ void amebaCircle::draw()
 void amebaCircle::draw2(ofVec2f lHand, ofVec2f rHand, ofVec2f head)
 {
 	float scaleRate = ofMap(ofDist(lHand.x, lHand.y, rHand.x, rHand.y), 0, 1920.f, 0.8f, 3.5f, true);
-	float movePos = ofMap(head.x, 0, 1920, 50.0f, -50.0f, true);
+	float movePos = ofMap(head.x, 0, 1920, 150.0f, -150.0f, true);
 	shader.begin();
 	shader.setUniform4f("inputColor1", ofFloatColor(ofColor(5, 20, 245)));
 	shader.setUniform4f("inputColor2", ofFloatColor(ofColor(0, 235, 180)));

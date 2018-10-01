@@ -25,6 +25,8 @@
 #include "amebaCircle.h"
 #include "soundBeach.h"
 
+#include "endPage.h"
+
 //engine
 #include "kinectEngine.h"
 #include "soundAnalyzer.h"
@@ -36,8 +38,6 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-
-		void mousePressed(int x, int y, int button);
 
 		kinectEngine kinectEngine;
 		oscEngine oscEngine;
@@ -71,6 +71,7 @@ class ofApp : public ofBaseApp{
 		particleOnBody particleOnBody;
 		amebaCircle amebaCircle;
 		soundBeach beach;
+		endPage endPage;
 		//smooth sceneChange;
 		
 

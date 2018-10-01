@@ -25,11 +25,10 @@ void ofApp::setup(){
 	particleOnBody.setup();
 	amebaCircle.setup();
 	beach.setup();
-
+	endPage.setup();
 	//-----------------other variables--------------------------
 	kicked = false;
 	snared = false;
-
 	drawMod = 0;
 }
 
@@ -55,7 +54,6 @@ void ofApp::update(){
 			auto temp = kinectEngine.kinect.getBodyIndexSource()->getPixels();
 			temp.resize(64, 53);
 			bodyMasker.update2(&(temp),kinectEngine.trackingId,kicked);
-
 			//---------------------------------------------------------
 			if (drawMod == 0) {
 				shapeExpand.update(oscEngine.smoothed, kicked);
@@ -77,26 +75,23 @@ void ofApp::update(){
 			else if (drawMod == 5) {
 				blocks.update(kicked, oscEngine.smoothed);
 				multipleBodies.update(bodyMasker.basePath);
-				
 			}
 			else if (drawMod == 6) {
 				amebaCircle.update(kicked, oscEngine.smoothed);
 				multipleBodies.update(bodyMasker.basePath);
-				
 			}
 			else if (drawMod == 7) {
-				fallingParticle.update(bodyMasker.modifiedPath.getOutline().at(0), kicked);
+				fallingParticle.update(bodyMasker.modifiedPath.getOutline().at(0), kicked,ofVec2f(kinectEngine.leftHand.x*2,kinectEngine.leftHand.y*2),ofVec2f(kinectEngine.rightHand.x*2,kinectEngine.rightHand.y*2),kinectEngine.lHandState,kinectEngine.rHandState);
+			}
+			else if (drawMod == 8) {
+				
 			}
 			oscEngine.send(0, kinectEngine.leftHandRelative.z, kinectEngine.rightHandRelative.z, kinectEngine.head.x, ofMap(ofDistSquared(kinectEngine.leftHand.x, kinectEngine.leftHand.y, kinectEngine.rightHand.x, kinectEngine.rightHand.y), 0, 1820, 0, 400));
-			//particleOnBody.update(bodyMasker.modifiedPath);
 		}
 	}
 	else {
-		//firework.update();
-		//firework.kicked(kicked);
 		firework.update2();
 		rectMotion.update2();
-		//rectMotion.update(oscEngine.ampList, kicked);
 		oscEngine.send(1,0.f, 0.f,960.0f, 400.0f);
 	}
 	drawMod = oscEngine.isPlayed;
@@ -104,9 +99,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	
-	ofBackgroundGradient(ofColor(39.0f), ofColor(0.0f),OF_GRADIENT_LINEAR);
-	
+	ofBackgroundGradient(ofColor(0.f,0.f,0.f), ofColor(40.f,39.0f,38.f),OF_GRADIENT_LINEAR);
 	if (!kinectEngine.isEmpty) {
 		float tempHead = abs(960.0f - kinectEngine.head.x) / 960;
 		if (drawMod == 0) {
@@ -114,21 +107,16 @@ void ofApp::draw(){
 		}
 		else if (drawMod == 1) {
 			ofSetColor(255);
-			//bodyMasker.basePath.setFilled(true);
-			//bodyMasker.basePath.setFillColor(255);
-			//bodyMasker.basePath.draw(ofGetWidth() / 2, ofGetHeight() / 2);
-		
 			bodyExpand.draw(oscEngine.ampList);
 		}
 		else if (drawMod == 2) {
-			
 			singleLine.draw(oscEngine.smoothed);
 			multipleBodies.draw1(oscEngine.smoothed);
 			bodyMasker.draw3(tempHead, oscEngine.smoothed);
 		}
 		else if (drawMod == 3) {
-			arms.draw(kinectEngine.head.x*2, kinectEngine.head.y*2, oscEngine.smoothed);
-			//arms.draw(ofGetMouseX(), ofGetMouseY(), oscEngine.smoothed);
+			float tempHeight = ofMap(oscEngine.smoothed[20], 0.f, 0.6f, 300.f, 2160.f);
+			arms.draw2(kinectEngine.head.x * 2, tempHeight,kinectEngine.leftHand,kinectEngine.rightHand,oscEngine.smoothed);
 			multipleBodies.draw2(oscEngine.smoothed);
 		}
 		else if (drawMod == 4) {
@@ -136,7 +124,7 @@ void ofApp::draw(){
 			sand.draw2(kinectEngine.leftHand, kinectEngine.rightHand, kinectEngine.head);
 		}
 		else if (drawMod == 5) {
-			blocks.drawRect(oscEngine.smoothed);
+			blocks.drawRect2(kinectEngine.leftHand,kinectEngine.rightHand,oscEngine.smoothed);
 			multipleBodies.draw3(oscEngine.smoothed);
 		}
 		else if (drawMod == 6) {
@@ -145,24 +133,17 @@ void ofApp::draw(){
 		}
 		else if (drawMod == 7) {
 			fallingParticle.draw(oscEngine.ampList);
-			bodyMasker.draw3(tempHead, oscEngine.smoothed);
+		}
+		else if (drawMod == 8) {
+			endPage.draw(kicked);
 		}
 	}
 	else {
-		//firework.draw();
 		firework.draw2();
 		rectMotion.draw();
-		//titlePage.draw3(oscEngine.ampList, kicked);
 		titlePage.draw();
 	}
+
 	kicked = false;
 	snared = false;
-}
-
-void ofApp::mousePressed(int x, int y, int button)
-{
-	drawMod++;
-	if (drawMod > 2) {
-		drawMod = 0;
-	}
 }

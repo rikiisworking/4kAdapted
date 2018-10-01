@@ -18,4 +18,6 @@ public:
 	auto getNearestBody(map<int, ofxKinectForWindows2::Data::Body> bodies);
 
 	bool isStreamed;
+
+	int lHandState, rHandState;
 };

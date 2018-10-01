@@ -40,8 +40,10 @@ void bodyExpand::update(float * fft, bool kicked, ofPath path)
 {
 	ofPath temp = path;
 	temp.setStrokeWidth(1.0f);
+	//temp.scale(0.9f,0.9f);
 	//temp.setStrokeColor(255);
-	if (fft[25] > 0.36f||kicked) {
+	if (fft[25] > 0.37f||kicked) {
+		bodyParticles.push_back(bodyExpandParticle(temp));
 		bodyParticles.push_back(bodyExpandParticle(temp));
 		bodyParticles.push_back(bodyExpandParticle(temp));
 		bodyParticles.push_back(bodyExpandParticle(temp));

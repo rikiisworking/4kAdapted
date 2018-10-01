@@ -50,6 +50,9 @@ void kinectEngine::update()
 			leftHandRelative = firstBody.joints[JointType_HandLeft].getPosition() - firstBody.joints[JointType_SpineBase].getPosition();
 			rightHandRelative = firstBody.joints[JointType_HandRight].getPosition() - firstBody.joints[JointType_SpineBase].getPosition();
 	
+			lHandState = firstBody.leftHandState;
+			rHandState = firstBody.rightHandState;
+			//open=2 closed=3;
 		}else {if (!isEmpty) { isEmpty = true; }}
 	}
 }

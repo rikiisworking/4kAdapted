@@ -10,6 +10,7 @@ public:
 	void update(bool kick, float * fft);
 	void drawTri(float * fft);
 	void drawRect(float * fft);
+	void drawRect2(ofVec2f lHand, ofVec2f rHand, float *fft);
 	void triDrawEach(float x, float y,float size,int i=0);
 	void rectDrawEach(float x, float y, float size);
 

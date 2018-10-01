@@ -8,13 +8,17 @@ yellow1(255, 255, 0), yellow2(255, 205, 50);
 void multipleBodies::setup()
 {
 	multipleBodyShader.load("multipleBodyShader/multipleBodyShader");
+	for (int i = 0; i < 50; i++) {
+		randomizedOrder.push_back(i);
+	}
+	random_shuffle(randomizedOrder.begin(), randomizedOrder.end());
 }
 
 void multipleBodies::update(ofPath bodyPath)
 {
 	ofPath temp = bodyPath;
 	temp.setFilled(true);
-	temp.scale(8.0, 8.0);
+	temp.scale(12.0, 12.0);
 	bodyDelayPath.push_back(temp);
 	if (bodyDelayPath.size() > 50) {
 		bodyDelayPath.erase(bodyDelayPath.begin());
@@ -29,8 +33,8 @@ void multipleBodies::draw1(float * amps)
 		for (int i =0; i <=40; i += 5) {
 			bodyDelayPath[i].scale(0.95, 0.95);
 			bodyDelayPath[i].setFillColor(ofColor(75 + 20 * i / 5));
-			bodyDelayPath[i].draw((float)ofGetWidth() / 2 -1150*2 + (float)(i+10) / 10 * 160*2.5, (float)ofGetHeight() - 824.0f +(float)i*7.5);
-			bodyDelayPath[i].draw((float)ofGetWidth() / 2 +1000*2  - (float)(i+10) / 10 * 160*2.5, (float)ofGetHeight() - 824.0f + (float)i*7.5);
+			bodyDelayPath[i].draw((float)ofGetWidth() / 2 -1200*2-350 + (float)(i+10) / 10 * 160*2.75, (float)ofGetHeight() - 974.0f +(float)i*7.5);
+			bodyDelayPath[i].draw((float)ofGetWidth() / 2 +1200*2-350  - (float)(i+10) / 10 * 160*2.75, (float)ofGetHeight() - 974.0f + (float)i*7.5);
 		}
 	}
 	shaderEnd();
@@ -39,12 +43,12 @@ void multipleBodies::draw1(float * amps)
 void multipleBodies::draw2(float * amps)
 {
 	shaderBegin(yellow2, yellow1, red2, red1, amps);
+	ofPushMatrix();
+	ofTranslate(0, -600.0f);
 	if (bodyDelayPath.size() >= 50) {
 		for (int i = 0; i < 20; i++) {
-			
-
 			ofPushMatrix();
-			ofTranslate(ofGetWidth() / 2-550 +i*8, ofGetHeight() / 2);
+			ofTranslate(ofGetWidth() / 2-875 +i*8, ofGetHeight() / 2);
 			ofScale(2.0, 2.0);
 			bodyDelayPath[i].scale(1.02f, 1.02f);
 			bodyDelayPath[i].setFillColor(ofColor(255, (float)(40 - i) / 40 * 255));
@@ -53,6 +57,7 @@ void multipleBodies::draw2(float * amps)
 
 		}
 	}
+	ofPopMatrix();
 	shaderEnd();
 }
 
@@ -62,8 +67,8 @@ void multipleBodies::draw3(float* amps)
 	if (bodyDelayPath.size() >= 50) {
 		for (int i = 0; i < 40; i++) {
 			ofPushMatrix();
-			ofScale(1.1f, 1.1f);
-			ofTranslate(ofGetWidth() / 2-250.0f, ofGetHeight() / 2-100.0f);
+			ofScale(0.9f, 0.9f);
+			ofTranslate(ofGetWidth() / 2+250.0f, ofGetHeight() / 2+100.0f);
 			ofRotate(ofGetElapsedTimef()*10+(float)i / 40 * 365);
 			bodyDelayPath[i].draw(0.f, 0.f);
 			ofRotate(-ofGetElapsedTimef() * 20);
@@ -82,9 +87,8 @@ void multipleBodies::draw4(float * amps)
 			for (int i2 = 0; i2 < 5; i2++) {
 				ofPushMatrix();
 				ofScale(0.9f, 0.9f);
-
-				bodyDelayPath[i * 5 + i2].setFilled(true);
-				bodyDelayPath[i * 5 + i2].draw(i*420.0f, i2 * 520 - 90.0f);
+				bodyDelayPath[randomizedOrder[i * 5 + i2]].setFilled(true);
+				bodyDelayPath[randomizedOrder[i * 5 + i2]].draw(i*420.0f-50, i2 * 520 - 90.0f);
 				ofPopMatrix();
 			}
 		}

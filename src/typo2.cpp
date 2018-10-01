@@ -6,7 +6,7 @@ void typo2::setup()
 
 	this->font_size = 40;
 	this->font.loadFont("senndmit.TTF", this->font_size, true, true, true);
-	charactors = { 'B', 'A', 'L', 'A', 'N', 'C', 'E','D' };
+	charactors = { 'S', 'E', 'N', 'N', 'H' ,'E','I','S','E','R',' ','I','T',' ','I','S' };
 }
 
 void typo2::draw()
@@ -17,8 +17,8 @@ void typo2::draw()
 
 		ofPath path = this->font.getCharacterAsPoints(charactors[charactor_index], true, false);
 		vector<ofPolyline> outline = path.getOutline();
-
-		ofPoint location = ofPoint(charactor_index %8 * this->font_size * 1.2 + this->font_size * 0.7, charactor_index / 8 * this->font_size * 1.4 + this->font_size * 0.7);
+		//charactor_index * 50 + ofGetWidth() / 2 +640, ofGetHeight() / 2
+		ofPoint location = ofPoint(charactor_index * 50 + ofGetWidth() / 2 + 640, ofGetHeight() / 2);
 		ofPushMatrix();
 		ofTranslate(location);
 

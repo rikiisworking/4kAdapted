@@ -5,7 +5,7 @@ class fallingParticle {
 public:
 	void setup();
 	void update(ofPolyline line,bool kicked);
-	void update(ofPolyline line, bool kicked, ofVec2f lHandPos, ofVec2f rHandPos);
+	void update(ofPolyline line, bool kicked, ofVec2f lHandPos, ofVec2f rHandPos, int lHandState, int rHandState);
 	void draw(float* amps);
 
 	ofShader particleShader;

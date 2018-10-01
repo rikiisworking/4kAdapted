@@ -4,8 +4,7 @@ void typo3::setup()
 {
 	this->font_size = 40;
 	this->font.loadFont("senndmit.ttf", this->font_size, true, true, true);
-	charactors = { 'P', 'L', 'E', 'A', 'S', 'U',
-		'R', 'A', 'B', 'L', 'E'};
+	charactors = { 'S', 'E', 'N', 'N', 'H', 'E', 'I', 'S', 'E', 'R', ' ', 'I', 'T', ' ', 'I', 'S' };
 }
 
 void typo3::draw()
@@ -13,7 +12,8 @@ void typo3::draw()
 	ofNoFill();
 	ofSetColor(239);
 	ofSetLineWidth(2);
-	ofTranslate(20, this->font_size + 20);
+	ofPushMatrix();
+	ofTranslate(ofGetWidth()/2+640, ofGetHeight() / 2);
 	int sample_count = 90;
 	for (int charactor_index = 0; charactor_index < charactors.size(); charactor_index++) {
 
@@ -54,4 +54,5 @@ void typo3::draw()
 			ofTranslate(this->font_size * 1.2, 0);
 		}
 	}
+	ofPopMatrix();
 }

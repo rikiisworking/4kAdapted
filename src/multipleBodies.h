@@ -10,7 +10,7 @@ class multipleBodies {
 		void draw4(float* amps);
 		float addedSize;
 		vector<ofPath> bodyDelayPath;
-	
+		vector<int> randomizedOrder;
 		void shaderBegin(ofColor color1, ofColor color2, ofColor color3, ofColor color4,float* amps);
 		void shaderEnd();
 

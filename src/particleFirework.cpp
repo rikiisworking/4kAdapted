@@ -30,7 +30,7 @@ void particleFirework::update2()
 {
 	for (int i = this->circles.size() - 1; i > -1; i--) {
 
-		this->circles_life[i] -= 3;
+		this->circles_life[i] -= 2;
 		if (this->circles_life[i] < 0) {
 			this->circles[i].get()->destroy();
 			this->circles.erase(this->circles.begin() + i);

@@ -106,6 +106,29 @@ void multipleBlocks::drawRect(float * fft)
 	multipleBlockShader.end();
 }
 
+void multipleBlocks::drawRect2(ofVec2f lHand, ofVec2f rHand, float * fft)
+{
+	multipleBlockShader.begin();
+	multipleBlockShader.setUniform1f("sound", fft[0]);
+	multipleBlockShader.setUniform1f("time", ofGetElapsedTimef());
+	multipleBlockShader.setUniform4f("inputColor1", color1);
+	multipleBlockShader.setUniform4f("inputColor2", color2);
+	float tempScale = ofMap(ofDist(lHand.x, lHand.y, rHand.x, rHand.y), 5.0f, 1920.0f, 1.0f, 1.3f, true);
+
+	ofPushMatrix();
+	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+	ofScale(tempScale, tempScale);
+	ofTranslate(-ofGetWidth() / 2, -ofGetHeight() / 2);
+	for (int i = 0; i < 25; i++) {
+		for (int i2 = 0; i2 < 25; i2++) {
+			rectDrawEach(xPositions[i], yPositions[i2], blockSizes[i + i2 * 25]);
+		}
+	}
+	
+	ofPopMatrix();
+	multipleBlockShader.end();
+}
+
 void multipleBlocks::triDrawEach(float x, float y, float size,int i)
 {
 	if(i==0){ ofTriangle(x - size / 2, y + size / 2, x, y - size / 2, x + size / 2, y + size / 2); }

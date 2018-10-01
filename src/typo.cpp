@@ -7,7 +7,7 @@ void typo::setup()
 	font_size = 40;
 	font.loadFont("senndmit.TTF", font_size, true, true, true);
 	charactors.clear();
-	charactors = { 'S', 'O', 'U', 'N', 'D' };
+	charactors = { 'S', 'E', 'N', 'N','H' ,'E','I','S','E','R',' ','I','T',' ','I','S' };
 }
 
 void typo::update()
@@ -23,7 +23,7 @@ void typo::draw()
 		ofPath path = this->font.getCharacterAsPoints(charactors[charactor_index], true, false);
 		vector<ofPolyline> outline = path.getOutline();
 
-		ofPoint location = ofPoint(charactor_index * 50 +  ofGetWidth() / 2-65, ofGetHeight()/2);
+		ofPoint location = ofPoint(charactor_index * 50 + ofGetWidth() / 2 +640, ofGetHeight() / 2);
 		ofPushMatrix();
 		ofTranslate(location);
 
@@ -37,7 +37,7 @@ void typo::draw()
 			if (outline_index != 0) {
 				ofNextContour(true);
 			}
-			
+
 			outline[outline_index] = outline[outline_index].getResampledByCount(sample_count);
 			vector<ofVec3f> vertices = outline[outline_index].getVertices();
 			for (int vertices_index = 0; vertices_index < (int)vertices.size(); vertices_index++) {
@@ -47,7 +47,6 @@ void typo::draw()
 				noise_value /= 10;
 				noise_value *= 10;
 				if (noise_value > -20 && noise_value < 20) {
-
 					noise_value = 0;
 				}
 

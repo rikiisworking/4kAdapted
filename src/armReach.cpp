@@ -49,6 +49,32 @@ void armReach::draw(float x, float y, float * soundStrength)
 	armReachShader.end();
 }
 
+void armReach::draw2(float x, float y, ofVec2f lHand, ofVec2f rHand, float * soundStrength)
+{
+	armReachShader.begin();
+
+	armReachShader.setUniform1f("sound", soundStrength[0]);
+	armReachShader.setUniform1f("time", ofGetElapsedTimef());
+	armReachShader.setUniform4f("inputColor1", ofFloatColor(red3));
+	armReachShader.setUniform4f("inputColor2", ofFloatColor(yellow4));
+
+	float tempScale = ofMap(ofDist(lHand.x, lHand.y, rHand.x, rHand.y), 5.0f, 1920.0f, 1.0f, 1.5f, true);
+	
+	ofPushMatrix();
+	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+	ofScale(tempScale, tempScale);
+	ofRotate(lHand.angle(rHand) / 4.0f);
+	ofTranslate(-ofGetWidth() / 2, -ofGetHeight() / 2);
+	for (int i = 0; i < ofGetWidth() / wInterval; i++) {
+		for (int i2 = 0; i2 < ofGetHeight() / hInterval; i2++) {
+			drawEach(xPos[i], yPos[i2], -soundStrength[theCase[i + i2*(ofGetHeight() / wInterval)]] * 80, x, y);
+		}
+	}
+	ofPopMatrix();
+	armReachShader.end();
+
+}
+
 void armReach::drawEach(float xPos, float yPos, float segLength, float inputX, float inputY)
 {
 	float angle = atan2(inputY - yPos, inputX - xPos);

@@ -105,8 +105,8 @@ void bodyMask::update2(ofPixels * bodyPixels, int id,bool kicked)
 	modifiedPath.setFilled(true);
 	ofPushMatrix();
 	modifiedPath.simplify(0.2f);
-	modifiedPath.scale(16.0, 16.0);
-	modifiedPath.translate(ofVec2f(ofGetWidth() / 2 - 32 * 16, ofGetHeight() - 53 * 16));
+	modifiedPath.scale(24.0f, 24.0f);
+	modifiedPath.translate(ofVec2f(ofGetWidth() / 2 - 32 * 24, ofGetHeight() - 53 * 24));
 	ofPopMatrix();
 	modifiedPath.close();
 	if (kicked) {

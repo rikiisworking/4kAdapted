@@ -5,13 +5,13 @@ void title::setup()
 	logoImage.load("logoWhite.png");
 	logoImage.setAnchorPercent(0.5, 0.5);
 	bold.load("sennbd.TTF", 28);
-	reg.load("senndmit.TTF", 20);
+	reg.load("senndmit.TTF", 30);
 	logoPos = 0;
 
 	logoMask.load("logoMask.png");
-	logoMask.resize(400.0F, 53.8992F);
+	logoMask.resize(600.0F, 80.8488F);
 	logoMaskShader.load("logoMaskShader/logoMaskShader");
-	fbo.allocate(400.0f, 53.8992f);
+	fbo.allocate(600.0f, 80.8488f);
 
 	colourSwitch = false;
 }
@@ -34,11 +34,11 @@ void title::draw3(float * sound, bool kicked)
 		temp.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 		temp.addVertex(ofPoint(0.0f, 0.0f));
 		temp.addColor(ofColor(blue1));
-		temp.addVertex(ofPoint(500.0f, 0.0f));
+		temp.addVertex(ofPoint(600.0f, 0.0f));
 		temp.addColor(ofColor(green1));
-		temp.addVertex(ofPoint(0.0f, 67.374f));
+		temp.addVertex(ofPoint(0.0f, 80.8488f));
 		temp.addColor(ofColor(blue1));
-		temp.addVertex(ofPoint(500.0f, 67.374f));
+		temp.addVertex(ofPoint(600.0f, 80.8488f));
 		temp.addColor(ofColor(green1));
 		temp.draw();
 	
@@ -49,11 +49,11 @@ void title::draw3(float * sound, bool kicked)
 		temp.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 		temp.addVertex(ofPoint(0.0f, 0.0f));
 		temp.addColor(ofColor(red1));
-		temp.addVertex(ofPoint(500.0f, 0.0f));
+		temp.addVertex(ofPoint(600.0f, 0.0f));
 		temp.addColor(ofColor(yellow1));
-		temp.addVertex(ofPoint(0.0f, 67.374f));
+		temp.addVertex(ofPoint(0.0f, 80.8488f));
 		temp.addColor(ofColor(red1));
-		temp.addVertex(ofPoint(500.0f, 67.374f));
+		temp.addVertex(ofPoint(600.0f, 80.8488f));
 		temp.addColor(ofColor(yellow1));
 		temp.draw();
 
@@ -94,11 +94,11 @@ void title::draw()
 		temp.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 		temp.addVertex(ofPoint(0.0f, 0.0f));
 		temp.addColor(ofColor(blue1));
-		temp.addVertex(ofPoint(500.0f, 0.0f));
+		temp.addVertex(ofPoint(600.0f, 0.0f));
 		temp.addColor(ofColor(green1));
-		temp.addVertex(ofPoint(0.0f, 67.374f));
+		temp.addVertex(ofPoint(0.0f, 80.8488f));
 		temp.addColor(ofColor(blue1));
-		temp.addVertex(ofPoint(500.0f, 67.374f));
+		temp.addVertex(ofPoint(600.0f, 80.8488f));
 		temp.addColor(ofColor(green1));
 		temp.draw();
 
@@ -110,11 +110,11 @@ void title::draw()
 		temp.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 		temp.addVertex(ofPoint(0.0f, 0.0f));
 		temp.addColor(ofColor(red1));
-		temp.addVertex(ofPoint(500.0f, 0.0f));
+		temp.addVertex(ofPoint(600.0f, 0.0f));
 		temp.addColor(ofColor(yellow1));
-		temp.addVertex(ofPoint(0.0f, 67.374f));
+		temp.addVertex(ofPoint(0.0f, 80.8488f));
 		temp.addColor(ofColor(red1));
-		temp.addVertex(ofPoint(500.0f, 67.374f));
+		temp.addVertex(ofPoint(600.0f, 80.8488f));
 		temp.addColor(ofColor(yellow1));
 		temp.draw();
 
@@ -129,7 +129,7 @@ void title::draw()
 	logoMaskShader.begin();
 	logoMaskShader.setUniformTexture("imageMask", logoMask.getTextureReference(), 1);
 
-	image.draw(ofGetWidth() / 2 - 210, ofGetHeight() / 2 - 80);
+	image.draw(ofGetWidth() / 2 - 315, ofGetHeight() / 2 - 120);
 	logoMaskShader.end();
 
 	if (colourSwitch) { ofSetColor(yellow1); }

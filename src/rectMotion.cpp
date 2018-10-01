@@ -35,7 +35,7 @@ void rectMotion::update2()
 {
 	if (ofGetFrameNum()%153==0|| ofGetFrameNum() % 180 == 0 || ofGetFrameNum() % 140 == 0) {
 		
-		for (int i = 0; i<5; i++) { particles.push_back(ofRandom(0.0f,5.0f)); }
+		for (int i = 0; i<8; i++) { particles.push_back(ofRandom(0.0f,5.0f)); }
 	}
 	if (ofGetFrameNum() % 120 == 0) {
 		currentColor = currentColor == 0 ? 1 : 0;
