@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 833.0, 263.0, 2197.0, 1166.0 ],
+		"rect" : [ -1405.0, 1343.0, 1363.0, 740.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,802 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-108",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1592.0, 409.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-107",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1640.0, 404.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "64"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-105",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1698.0, 403.5, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "127"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-102",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1607.0, 354.0, 58.0, 22.0 ],
+					"style" : "",
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 13.0,
+					"id" : "obj-50",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 227.0, 552.0, 520.0, 489.0 ],
+						"bgcolor" : [ 0.886275, 0.886275, 0.886275, 1.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 10.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Lato",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 6.0, 165.0, 91.0, 22.0 ],
+									"style" : "",
+									"text" : "(signal) output"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-8",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 107.0, 7.0, 83.0, 22.0 ],
+									"style" : "",
+									"text" : "(signal) input"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-7",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 6.0, 7.0, 86.0, 38.0 ],
+									"style" : "",
+									"text" : "(1 or 0) on/off"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "list" ],
+									"patching_rect" : [ 26.0, 109.0, 91.0, 24.0 ],
+									"style" : "",
+									"text" : "matrix~ 1 1 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 124.0, 74.0, 126.0, 24.0 ],
+									"style" : "",
+									"text" : "loadmess ramp 500"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 26.0, 60.0, 48.0, 24.0 ],
+									"style" : "",
+									"text" : "0 0 $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(signal) output",
+									"id" : "obj-3",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 26.0, 137.0, 25.0, 25.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(signal) input",
+									"id" : "obj-2",
+									"index" : 2,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 135.0, 29.0, 25.0, 25.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(1 or 0) on/off",
+									"id" : "obj-1",
+									"index" : 1,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 26.0, 29.0, 25.0, 25.0 ],
+									"style" : ""
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+ ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 1595.75, 881.0, 85.0, 24.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"fontname" : "Lato",
+						"fontsize" : 10.0,
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p fade-gate~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Lato",
+					"fontsize" : 13.0,
+					"id" : "obj-17",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1772.117676, 972.0, 128.0, 42.0 ],
+					"style" : "",
+					"text" : "Double-click to see reverb patch."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-71",
+					"maxclass" : "live.gain~",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"orientation" : 1,
+					"outlettype" : [ "signal", "signal", "", "float", "list" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1503.75, 1043.0, 111.0, 38.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 0.0, 38.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "live.gain~[2]",
+							"parameter_shortname" : "live.gain~",
+							"parameter_type" : 0,
+							"parameter_mmin" : -70.0,
+							"parameter_mmax" : 6.0,
+							"parameter_initial_enable" : 1,
+							"parameter_initial" : [ 0 ],
+							"parameter_unitstyle" : 4
+						}
+
+					}
+,
+					"showname" : 0,
+					"varname" : "live.gain~[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Lato",
+					"fontsize" : 13.0,
+					"id" : "obj-65",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1545.75, 1097.5, 63.0, 42.0 ],
+					"style" : "",
+					"text" : "Start Audio"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-70",
+					"local" : 1,
+					"maxclass" : "ezdac~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1503.75, 1097.5, 42.0, 42.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 150.0, 150.0, 45.0, 45.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.811765, 0.372549, 0.372549, 1.0 ],
+					"fontname" : "Lato",
+					"fontsize" : 13.0,
+					"id" : "obj-72",
+					"maxclass" : "newobj",
+					"numinlets" : 5,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 1678.0, 981.0, 93.0, 24.0 ],
+					"style" : "",
+					"text" : "yafr2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 13.0,
+					"id" : "obj-73",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1678.0, 933.0, 60.0, 24.0 ],
+					"style" : "",
+					"text" : "*~ 0.707"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-74",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1503.75, 841.0, 20.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 147.0, 124.0, 20.0, 20.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 13.0,
+					"id" : "obj-90",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 612.0, 124.0, 275.0, 199.0 ],
+						"bgcolor" : [ 0.886275, 0.886275, 0.886275, 1.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 10.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Lato",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 6.0, 165.0, 91.0, 21.0 ],
+									"style" : "",
+									"text" : "(signal) output"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-8",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 107.0, 7.0, 83.0, 21.0 ],
+									"style" : "",
+									"text" : "(signal) input"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-7",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 6.0, 7.0, 86.0, 21.0 ],
+									"style" : "",
+									"text" : "(1 or 0) on/off"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "list" ],
+									"patching_rect" : [ 26.0, 109.0, 91.0, 21.0 ],
+									"style" : "",
+									"text" : "matrix~ 1 1 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 124.0, 74.0, 126.0, 21.0 ],
+									"style" : "",
+									"text" : "loadmess ramp 500"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato",
+									"fontsize" : 13.0,
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 26.0, 60.0, 48.0, 19.0 ],
+									"style" : "",
+									"text" : "0 0 $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(signal) output",
+									"id" : "obj-3",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 26.0, 137.0, 25.0, 25.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(signal) input",
+									"id" : "obj-2",
+									"index" : 2,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 135.0, 29.0, 25.0, 25.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "(1 or 0) on/off",
+									"id" : "obj-1",
+									"index" : 1,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 26.0, 29.0, 25.0, 25.0 ],
+									"style" : ""
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 1503.75, 881.0, 85.0, 24.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"fontname" : "Lato",
+						"fontsize" : 10.0,
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p fade-gate~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 11.595187,
+					"id" : "obj-91",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1902.470581, 781.0, 65.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 199.0, 110.0, 65.0, 20.0 ],
+					"style" : "",
+					"text" : "decay time"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 11.595187,
+					"id" : "obj-92",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2232.0, 781.0, 53.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 199.0, 157.0, 53.0, 20.0 ],
+					"style" : "",
+					"text" : "diffusion"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 11.595187,
+					"id" : "obj-93",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2063.0, 780.0, 132.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 199.0, 133.0, 132.0, 20.0 ],
+					"style" : "",
+					"text" : "high frequency damping"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Lato",
+					"fontsize" : 11.595187,
+					"id" : "obj-94",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1711.0, 780.0, 67.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 199.0, 87.0, 67.0, 20.0 ],
+					"style" : "",
+					"text" : "size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.765178, 0.280234, 0.308467, 1.0 ],
+					"id" : "obj-95",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 2058.0, 781.0, 142.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 195.0, 134.0, 142.0, 19.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.765178, 0.280234, 0.308467, 1.0 ],
+					"id" : "obj-96",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1897.470581, 782.0, 142.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 195.0, 111.0, 142.0, 19.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.765178, 0.280234, 0.308467, 1.0 ],
+					"id" : "obj-97",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1708.0, 781.0, 142.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 195.0, 88.0, 142.0, 19.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.765178, 0.280234, 0.308467, 1.0 ],
+					"id" : "obj-98",
+					"maxclass" : "slider",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 2227.0, 781.0, 142.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 195.0, 157.0, 142.0, 19.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 487.0, 129.5, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "0"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-35",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -45,7 +841,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 448.0, 229.0, 29.5, 22.0 ],
 					"style" : "",
-					"text" : "0"
+					"text" : "1"
 				}
 
 			}
@@ -147,17 +943,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 672.0, 1240.0, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-85",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 865.0, 1368.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -786,7 +1571,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1341.0, 636.0, 140.0, 22.0 ],
+					"patching_rect" : [ 1341.0, 640.0, 140.0, 22.0 ],
 					"style" : "",
 					"text" : "udpsend 127.0.0.1 7401"
 				}
@@ -1085,20 +1870,6 @@
 			}
 , 			{
 				"box" : 				{
-					"format" : 6,
-					"id" : "obj-54",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1253.0, 129.5, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-58",
 					"maxclass" : "textbutton",
 					"numinlets" : 1,
@@ -1131,198 +1902,223 @@
 			}
 , 			{
 				"box" : 				{
-					"clipheight" : 24.625,
+					"allowreorder" : 0,
+					"clipheight" : 21.777778,
 					"color" : [ 0.219608, 0.913725, 1.0, 1.0 ],
 					"data" : 					{
 						"clips" : [ 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart1.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample0.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart2.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample1.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart3.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample2.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart4.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample3.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart5.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample4.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart6.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample5.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart7.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample6.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
 , 							{
-								"filename" : "C:\\Users\\hguyss03\\Desktop\\showersounds\\crowPart8.mp3",
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample7.mp3",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
 									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"originallengthms" : [ 0.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 1 ],
-									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
 									"formantcorrection" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ]
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
+								}
+
+							}
+, 							{
+								"filename" : "C:/Users/hguyss03/Desktop/showersounds/modified/sample8.mp3",
+								"filekind" : "audiofile",
+								"selection" : [ 0.0, 1.0 ],
+								"loop" : 0,
+								"content_state" : 								{
+									"originallength" : [ 0.0, "ticks" ],
+									"mode" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
+									"formantcorrection" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"play" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"speed" : [ 1.0 ]
 								}
 
 							}
@@ -1334,7 +2130,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 710.0, 240.0, 305.0, 205.0 ],
+					"patching_rect" : [ 668.0, 250.0, 305.0, 205.0 ],
 					"style" : ""
 				}
 
@@ -1349,7 +2145,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 659.5, 552.723633, 121.0, 49.0 ],
-					"presentation_rect" : [ 75.0, 75.0, 50.0, 49.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 0.0, 49.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -1364,19 +2160,6 @@
 					}
 ,
 					"varname" : "live.gain~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-66",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1101.0, 144.5, 74.0, 22.0 ],
-					"style" : "",
-					"text" : "pitchshift $1"
 				}
 
 			}
@@ -1426,9 +2209,9 @@
 					"numinlets" : 5,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 135.5, 381.0, 141.0, 22.0 ],
+					"patching_rect" : [ 1499.0, 263.0, 139.0, 22.0 ],
 					"style" : "",
-					"text" : "zmap -0.65 -0.35 1. 1.15"
+					"text" : "zmap -0.65 -0.35 0. 127."
 				}
 
 			}
@@ -1709,19 +2492,134 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-36",
-					"maxclass" : "number",
+					"background" : 1,
+					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+					"fontface" : 1,
+					"fontsize" : 13.0,
+					"hint" : "",
+					"id" : "obj-99",
+					"ignoreclick" : 1,
+					"maxclass" : "textbutton",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 610.0, 361.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 1902.470581, 981.5, 20.0, 20.0 ],
+					"rounded" : 60.0,
+					"style" : "",
+					"text" : "4",
+					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+					"fontface" : 1,
+					"fontsize" : 13.0,
+					"hint" : "",
+					"id" : "obj-100",
+					"ignoreclick" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 2010.970581, 829.0, 20.0, 20.0 ],
+					"rounded" : 60.0,
+					"style" : "",
+					"text" : "3",
+					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+					"fontface" : 1,
+					"fontsize" : 13.0,
+					"hint" : "",
+					"id" : "obj-101",
+					"ignoreclick" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1612.5, 1107.5, 20.0, 20.0 ],
+					"rounded" : 60.0,
+					"style" : "",
+					"text" : "1",
+					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-105", 0 ],
+					"order" : 0,
+					"source" : [ "obj-102", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-107", 0 ],
+					"order" : 1,
+					"source" : [ "obj-102", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-108", 0 ],
+					"order" : 2,
+					"source" : [ "obj-102", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-74", 0 ],
+					"order" : 3,
+					"source" : [ "obj-102", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-98", 0 ],
+					"source" : [ "obj-105", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-95", 0 ],
+					"order" : 0,
+					"source" : [ "obj-107", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-96", 0 ],
+					"order" : 1,
+					"source" : [ "obj-107", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-97", 0 ],
+					"source" : [ "obj-108", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-69", 0 ],
 					"source" : [ "obj-11", 0 ]
@@ -1812,15 +2710,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-2", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-58", 0 ],
-					"order" : 0,
+					"destination" : [ "obj-29", 0 ],
+					"order" : 1,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -1884,6 +2782,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-35", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -1919,15 +2824,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-36", 0 ],
-					"source" : [ "obj-35", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-63", 0 ],
-					"source" : [ "obj-36", 0 ]
+					"source" : [ "obj-35", 0 ]
 				}
 
 			}
@@ -2054,15 +2952,24 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-55", 0 ],
-					"source" : [ "obj-51", 0 ]
+					"destination" : [ "obj-71", 1 ],
+					"order" : 1,
+					"source" : [ "obj-50", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-66", 0 ],
-					"source" : [ "obj-54", 0 ]
+					"destination" : [ "obj-73", 0 ],
+					"order" : 0,
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-55", 0 ],
+					"source" : [ "obj-51", 0 ]
 				}
 
 			}
@@ -2084,7 +2991,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-54", 0 ],
+					"destination" : [ "obj-97", 0 ],
 					"source" : [ "obj-56", 0 ]
 				}
 
@@ -2178,13 +3085,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-63", 0 ],
-					"source" : [ "obj-66", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-63", 0 ],
 					"source" : [ "obj-67", 0 ]
 				}
 
@@ -2217,6 +3117,57 @@
 					"destination" : [ "obj-46", 0 ],
 					"order" : 1,
 					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 1 ],
+					"source" : [ "obj-71", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 0 ],
+					"source" : [ "obj-71", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-71", 1 ],
+					"source" : [ "obj-72", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-71", 0 ],
+					"source" : [ "obj-72", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-72", 0 ],
+					"source" : [ "obj-73", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-50", 0 ],
+					"order" : 0,
+					"source" : [ "obj-74", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-90", 0 ],
+					"order" : 1,
+					"source" : [ "obj-74", 0 ]
 				}
 
 			}
@@ -2335,16 +3286,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
-					"order" : 1,
 					"source" : [ "obj-86", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-85", 1 ],
-					"order" : 0,
-					"source" : [ "obj-86", 0 ]
+					"destination" : [ "obj-50", 1 ],
+					"source" : [ "obj-86", 1 ]
 				}
 
 			}
@@ -2358,7 +3307,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-85", 0 ],
+					"destination" : [ "obj-90", 1 ],
 					"order" : 0,
 					"source" : [ "obj-87", 0 ]
 				}
@@ -2380,82 +3329,139 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-71", 0 ],
+					"order" : 1,
+					"source" : [ "obj-90", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"color" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"destination" : [ "obj-73", 0 ],
+					"order" : 0,
+					"source" : [ "obj-90", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-72", 3 ],
+					"hidden" : 1,
+					"source" : [ "obj-95", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-72", 2 ],
+					"hidden" : 1,
+					"source" : [ "obj-96", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-72", 1 ],
+					"hidden" : 1,
+					"source" : [ "obj-97", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-72", 4 ],
+					"hidden" : 1,
+					"source" : [ "obj-98", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
-			"obj-84::obj-95" : [ "ResCV[3]", "CV", 0 ],
-			"obj-83::obj-55" : [ "power[2]", "power", 0 ],
-			"obj-83::obj-95" : [ "ResCV[2]", "CV", 0 ],
-			"obj-84::obj-63" : [ "CV3[3]", "CV3", 0 ],
-			"obj-83::obj-23" : [ "Offset[2]", "Offset", 0 ],
-			"obj-84::obj-22" : [ "TimeMode[3]", "TimeMode", 1 ],
-			"obj-64" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"obj-84::obj-68" : [ "Res[3]", "Res", 0 ],
-			"obj-84::obj-51" : [ "CV2[3]", "CV2", 0 ],
 			"obj-83::obj-68" : [ "Res[2]", "Res", 0 ],
-			"obj-83::obj-54" : [ "CV1[2]", "CV1", 0 ],
-			"obj-84::obj-54" : [ "CV1[3]", "CV1", 0 ],
-			"obj-84::obj-55" : [ "power[3]", "power", 0 ],
-			"obj-83::obj-22" : [ "TimeMode[2]", "TimeMode", 1 ],
+			"obj-84::obj-51" : [ "CV2[3]", "CV2", 0 ],
+			"obj-84::obj-63" : [ "CV3[3]", "CV3", 0 ],
+			"obj-83::obj-95" : [ "ResCV[2]", "CV", 0 ],
 			"obj-83::obj-20" : [ "Freq[2]", "Freq", 0 ],
+			"obj-71" : [ "live.gain~[2]", "live.gain~", 0 ],
+			"obj-84::obj-22" : [ "TimeMode[3]", "TimeMode", 1 ],
+			"obj-83::obj-22" : [ "TimeMode[2]", "TimeMode", 1 ],
 			"obj-84::obj-23" : [ "Offset[3]", "Offset", 0 ],
+			"obj-84::obj-55" : [ "power[3]", "power", 0 ],
 			"obj-83::obj-51" : [ "CV2[2]", "CV2", 0 ],
+			"obj-83::obj-54" : [ "CV1[2]", "CV1", 0 ],
+			"obj-84::obj-68" : [ "Res[3]", "Res", 0 ],
+			"obj-84::obj-95" : [ "ResCV[3]", "CV", 0 ],
+			"obj-84::obj-20" : [ "Freq[3]", "Freq", 0 ],
 			"obj-83::obj-63" : [ "CV3[2]", "CV3", 0 ],
-			"obj-84::obj-20" : [ "Freq[3]", "Freq", 0 ]
+			"obj-83::obj-55" : [ "power[2]", "power", 0 ],
+			"obj-84::obj-54" : [ "CV1[3]", "CV1", 0 ],
+			"obj-64" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-83::obj-23" : [ "Offset[2]", "Offset", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "crowPart1.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample0.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart2.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample1.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart3.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample2.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart4.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample3.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart5.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample4.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart6.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample5.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart7.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample6.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "crowPart8.mp3",
-				"bootpath" : "~/Desktop/showersounds",
-				"patcherrelativepath" : "./showersounds",
+				"name" : "sample7.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
+				"type" : "Mp3 ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sample8.mp3",
+				"bootpath" : "~/Desktop/showersounds/modified",
+				"patcherrelativepath" : "./showersounds/modified",
 				"type" : "Mp3 ",
 				"implicit" : 1
 			}
@@ -2465,11 +3471,19 @@
 				"type" : "JSON",
 				"implicit" : 1
 			}
+, 			{
+				"name" : "yafr2.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/effects/reverb/lib",
+				"patcherrelativepath" : "../../../ProgramData/Max 7/examples/effects/reverb/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "ak.bigger",
 				"default" : 				{
+					"elementcolor" : [ 0.402827, 0.442342, 0.446734, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -2482,11 +3496,10 @@
 						"pt2" : [ 0.559406, 0.565217 ]
 					}
 ,
-					"selectioncolor" : [ 0.532195, 0.84546, 0.169658, 1.0 ],
 					"fontsize" : [ 14.0 ],
 					"fontname" : [ "Lato" ],
+					"selectioncolor" : [ 0.532195, 0.84546, 0.169658, 1.0 ],
 					"textcolor_inverse" : [ 0.959262, 0.956712, 0.966038, 1.0 ],
-					"elementcolor" : [ 0.402827, 0.442342, 0.446734, 1.0 ],
 					"color" : [ 0.860949, 0.86278, 0.710083, 1.0 ]
 				}
 ,
@@ -2496,6 +3509,8 @@
 , 			{
 				"name" : "zielony",
 				"default" : 				{
+					"elementcolor" : [ 0.03764, 0.288409, 0.132402, 1.0 ],
+					"fontface" : [ 0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color" : [ 0.067387, 0.339963, 0.132708, 1.0 ],
@@ -2508,18 +3523,16 @@
 						"pt2" : [ 0.475248, 1.052174 ]
 					}
 ,
-					"selectioncolor" : [ 0.528927, 1.0, 0.272898, 1.0 ],
-					"fontface" : [ 0 ],
 					"fontsize" : [ 14.0 ],
-					"textjustification" : [ 0 ],
 					"fontname" : [ "Lato Regular" ],
 					"bgcolor" : [ 0.178182, 0.194235, 0.179854, 1.0 ],
+					"selectioncolor" : [ 0.528927, 1.0, 0.272898, 1.0 ],
+					"textcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ],
+					"textjustification" : [ 0 ],
 					"textcolor_inverse" : [ 0.528927, 1.0, 0.272898, 1.0 ],
 					"patchlinecolor" : [ 0.439216, 0.74902, 0.254902, 0.9 ],
-					"textcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ],
-					"accentcolor" : [ 0.086281, 0.464155, 0.176596, 1.0 ],
-					"elementcolor" : [ 0.03764, 0.288409, 0.132402, 1.0 ],
-					"color" : [ 0.4, 1.0, 0.4, 1.0 ]
+					"color" : [ 0.4, 1.0, 0.4, 1.0 ],
+					"accentcolor" : [ 0.086281, 0.464155, 0.176596, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
