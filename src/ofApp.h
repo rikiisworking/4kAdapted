@@ -6,7 +6,6 @@
 #include "ofxBox2d.h"
 #include "ofxOpenCv.h"
 
-
 //artwork
 #include "bodyMask.h"
 #include "particleFirework.h"
@@ -21,7 +20,7 @@
 #include "armReach.h"
 #include "multipleBlocks.h"
 #include "sandParticle.h"
-#include "particleOnBody.h"
+
 #include "amebaCircle.h"
 #include "soundBeach.h"
 
@@ -38,19 +37,10 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-
+		void reset();
 		kinectEngine kinectEngine;
 		oscEngine oscEngine;
 		soundAnalyzer soundAnalyzer;
-
-		//variable for body mapping
-		ofImage bodyIndexImg;
-		ofxCvGrayscaleImage 	grayImage;
-		ofxCvGrayscaleImage 	grayBg;
-		ofxCvGrayscaleImage 	grayDiff;
-		ofxCvContourFinder		contourFinder;
-
-		ofPath bodyPath;
 
 		//bodyMask
 		bodyMask bodyMasker;
@@ -68,17 +58,17 @@ class ofApp : public ofBaseApp{
 		multipleBlocks blocks;
 		sandParticle sand;
 		armReach arms;
-		particleOnBody particleOnBody;
+	
 		amebaCircle amebaCircle;
 		soundBeach beach;
 		endPage endPage;
-		//smooth sceneChange;
-		
-
-
 
 		bool kicked;
 		bool snared;
 
 		int drawMod;
+
+		bool shouldReset;
+
+		ofTrueTypeFont font;
 };

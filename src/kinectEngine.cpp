@@ -23,6 +23,7 @@ void kinectEngine::set()
 	isEmpty = true;
 	trackingId = 0;
 	isStreamed = false;
+	inPosition = false;
 }
 
 void kinectEngine::update()
@@ -50,10 +51,16 @@ void kinectEngine::update()
 			leftHandRelative = firstBody.joints[JointType_HandLeft].getPosition() - firstBody.joints[JointType_SpineBase].getPosition();
 			rightHandRelative = firstBody.joints[JointType_HandRight].getPosition() - firstBody.joints[JointType_SpineBase].getPosition();
 	
-			lHandState = firstBody.leftHandState;
+			lHandState = firstBody.leftHandState;			//open=2 closed=3;
 			rHandState = firstBody.rightHandState;
-			//open=2 closed=3;
-		}else {if (!isEmpty) { isEmpty = true; }}
+			if (firstBody.joints[JointType_Head].getPosition().z > 3.5f) {
+				if (inPosition) {inPosition = false;}
+			}else {
+				if (!inPosition) {inPosition = true;}
+			}
+
+		}
+		else { if (!isEmpty) { isEmpty = true; }if (inPosition) { inPosition = false; } }
 	}
 }
 

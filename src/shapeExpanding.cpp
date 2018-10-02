@@ -22,7 +22,7 @@ void shapeExpanding::update(float * amps,bool kick)
 	expandSpeed = expandSpeed + amps[25]*5.f;
 	angle = kick ? angle + 2.5f : angle;
 	if (expandSpeed > 1.0f) {
-		expandSpeed=expandSpeed - 0.3f;
+		expandSpeed=expandSpeed - 0.5f;
 	}
 }
 void shapeExpanding::drawRect(float * amps)//function for debug

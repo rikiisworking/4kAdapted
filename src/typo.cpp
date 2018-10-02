@@ -7,7 +7,7 @@ void typo::setup()
 	font_size = 40;
 	font.loadFont("senndmit.TTF", font_size, true, true, true);
 	charactors.clear();
-	charactors = { 'S', 'E', 'N', 'N','H' ,'E','I','S','E','R',' ','I','T',' ','I','S' };
+	charactors = { 'S', 'E', 'N', 'N','H' ,'E','I','S','E','R','.','I','T','.','I','S' };
 }
 
 void typo::update()

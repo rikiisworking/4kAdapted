@@ -22,7 +22,6 @@ void ofApp::setup(){
 	arms.setup(100,90);
 	blocks.setup();
 	sand.setup();
-	particleOnBody.setup();
 	amebaCircle.setup();
 	beach.setup();
 	endPage.setup();
@@ -30,15 +29,12 @@ void ofApp::setup(){
 	kicked = false;
 	snared = false;
 	drawMod = 0;
+
+	shouldReset = false;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	
-	std::stringstream strm;
-	strm << "fps: " << ofGetFrameRate();
-	ofSetWindowTitle(strm.str());
-
 	kicked = soundAnalyzer.getKick();
 	snared = soundAnalyzer.getSnare();
 
@@ -47,7 +43,7 @@ void ofApp::update(){
 	soundAnalyzer.update(oscEngine.ampList);
 	//artwork
 	
-	if (!kinectEngine.isEmpty) {
+	if (!kinectEngine.isEmpty && kinectEngine.inPosition) {
 		
 		if (kinectEngine.isStreamed) {
 			//------------------basic body masking---------------------
@@ -84,15 +80,22 @@ void ofApp::update(){
 				fallingParticle.update(bodyMasker.modifiedPath.getOutline().at(0), kicked,ofVec2f(kinectEngine.leftHand.x*2,kinectEngine.leftHand.y*2),ofVec2f(kinectEngine.rightHand.x*2,kinectEngine.rightHand.y*2),kinectEngine.lHandState,kinectEngine.rHandState);
 			}
 			else if (drawMod == 8) {
-				
+				if (!shouldReset) {
+					shouldReset = true;
+				}
 			}
 			oscEngine.send(0, kinectEngine.leftHandRelative.z, kinectEngine.rightHandRelative.z, kinectEngine.head.x, ofMap(ofDistSquared(kinectEngine.leftHand.x, kinectEngine.leftHand.y, kinectEngine.rightHand.x, kinectEngine.rightHand.y), 0, 1820, 0, 400));
 		}
+	
 	}
 	else {
 		firework.update2();
 		rectMotion.update2();
 		oscEngine.send(1,0.f, 0.f,960.0f, 400.0f);
+		if (shouldReset) {
+			reset();
+			shouldReset = false;
+		}
 	}
 	drawMod = oscEngine.isPlayed;
 }
@@ -100,7 +103,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	ofBackgroundGradient(ofColor(0.f,0.f,0.f), ofColor(40.f,39.0f,38.f),OF_GRADIENT_LINEAR);
-	if (!kinectEngine.isEmpty) {
+	if (!kinectEngine.isEmpty && kinectEngine.inPosition) {
 		float tempHead = abs(960.0f - kinectEngine.head.x) / 960;
 		if (drawMod == 0) {
 			shapeExpand.drawRectFromPosition(oscEngine.smoothed, kinectEngine.leftHand, kinectEngine.rightHand);
@@ -146,4 +149,23 @@ void ofApp::draw(){
 
 	kicked = false;
 	snared = false;
+}
+
+void ofApp::reset()
+{
+	titlePage.setup();
+	bodyMasker.set(1);
+	firework.setup();
+	fallingParticle.setup();
+	rectMotion.setup();
+	bodyExpand.setup();
+	multipleBodies.setup();
+	shapeExpand.setup();
+	singleLine.setup();
+	arms.setup(100, 90);
+	blocks.setup();
+	sand.setup();
+	amebaCircle.setup();
+	beach.setup();
+	endPage.setup();
 }

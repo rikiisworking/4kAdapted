@@ -104,8 +104,8 @@ void multipleBodies::shaderBegin(ofColor color1, ofColor color2, ofColor color3,
 	ofFloatColor	green1 = color3;
 	ofFloatColor	green2 = color4;
 
-	blue1.lerp(green2, (cos(ofGetElapsedTimef() * 3.5f + amps[0] / 2.f) + 1) / 2);
-	green1.lerp(blue2, (sin(ofGetElapsedTimef() * 2.5f + amps[1] / 1.5f) + 1) / 2);
+	blue1.lerp(green2, (cos(ofGetElapsedTimef() * 1.5f + amps[0] / 4.f) + 1) / 2);
+	green1.lerp(blue2, (sin(ofGetElapsedTimef() * 1.5f + amps[1] / 3.0f) + 1) / 2);
 
 	multipleBodyShader.begin();
 	multipleBodyShader.setUniform1f("sound", amps[0]);

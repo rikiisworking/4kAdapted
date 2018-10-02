@@ -8,7 +8,7 @@ void bodyExpand::setup()
 
 void bodyExpand::update(bool kick,ofPath path)
 {
-	if (kick||ofGetFrameNum()%15==0) {
+	if (kick||ofGetFrameNum()%10==0) {
 		bodyParticles.push_back(bodyExpandParticle(path));
 	}
 	for (int i = bodyParticles.size() - 1; i >= 0; i--) {

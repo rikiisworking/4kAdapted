@@ -124,7 +124,8 @@ void soundBeach::draw2(float * fft, ofVec2f lHand, ofVec2f rHand, ofVec2f head)
 	ofTranslate(movePos, 0);
 	ofPushMatrix();
 	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-	ofRotate(lHand.angle(rHand));
+	ofRotate(lHand.angle(rHand)+10);
+	
 	ofTranslate(-ofGetWidth() / 2, -ofGetHeight() / 2);
 	drawWaves(fft);
 	ofFill();
