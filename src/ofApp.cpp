@@ -29,12 +29,12 @@ void ofApp::setup(){
 	kicked = false;
 	snared = false;
 	drawMod = 0;
-
-	shouldReset = false;
+	isMusicPlaying = false;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+
 	kicked = soundAnalyzer.getKick();
 	snared = soundAnalyzer.getSnare();
 
@@ -43,9 +43,12 @@ void ofApp::update(){
 	soundAnalyzer.update(oscEngine.ampList);
 	//artwork
 	
-	if (!kinectEngine.isEmpty && kinectEngine.inPosition) {
+	if (!kinectEngine.isEmpty && kinectEngine.inPosition&&kinectEngine.isStreamed) {
 		
-		if (kinectEngine.isStreamed) {
+			if (!isMusicPlaying) {
+				isMusicPlaying = true;
+				oscEngine.send(1, 0.f, 0.f, 960.0f, 400.0f,0,0);
+			}
 			//------------------basic body masking---------------------
 			auto temp = kinectEngine.kinect.getBodyIndexSource()->getPixels();
 			temp.resize(64, 53);
@@ -55,7 +58,7 @@ void ofApp::update(){
 				shapeExpand.update(oscEngine.smoothed, kicked);
 			}
 			else if (drawMod == 1) {
-				bodyExpand.update(oscEngine.ampList,kicked,bodyMasker.modifiedPath);
+				bodyExpand.update(snared,kicked,bodyMasker.modifiedPath);
 			}
 			else if (drawMod ==2) {
 				multipleBodies.update(bodyMasker.basePath);
@@ -77,33 +80,33 @@ void ofApp::update(){
 				multipleBodies.update(bodyMasker.basePath);
 			}
 			else if (drawMod == 7) {
-				fallingParticle.update(bodyMasker.modifiedPath.getOutline().at(0), kicked,ofVec2f(kinectEngine.leftHand.x*2,kinectEngine.leftHand.y*2),ofVec2f(kinectEngine.rightHand.x*2,kinectEngine.rightHand.y*2),kinectEngine.lHandState,kinectEngine.rHandState);
+				fallingParticle.update(kicked,ofVec2f(kinectEngine.leftHand.x*2,kinectEngine.leftHand.y*2),ofVec2f(kinectEngine.rightHand.x*2,kinectEngine.rightHand.y*2),kinectEngine.lHandState,kinectEngine.rHandState,
+				kinectEngine.leftHandRelative.z,kinectEngine.rightHandRelative.z);
 			}
 			else if (drawMod == 8) {
-				if (!shouldReset) {
-					shouldReset = true;
-				}
+
 			}
-			oscEngine.send(0, kinectEngine.leftHandRelative.z, kinectEngine.rightHandRelative.z, kinectEngine.head.x, ofMap(ofDistSquared(kinectEngine.leftHand.x, kinectEngine.leftHand.y, kinectEngine.rightHand.x, kinectEngine.rightHand.y), 0, 1820, 0, 400));
-		}
-	
+			oscEngine.send(0, kinectEngine.leftHandRelative.z, kinectEngine.rightHandRelative.z, kinectEngine.head.x, ofMap(ofDistSquared(kinectEngine.leftHand.x, kinectEngine.leftHand.y, kinectEngine.rightHand.x, kinectEngine.rightHand.y), 0, 1820, 0, 400),kinectEngine.leftHand.y,kinectEngine.rightHand.y);
+		
 	}
 	else {
+		if (isMusicPlaying) {
+			isMusicPlaying = false;
+			oscEngine.send(0, 0.f, 0.f, 960.0f, 400.0f,0,0);
+		}
 		firework.update2();
 		rectMotion.update2();
-		oscEngine.send(1,0.f, 0.f,960.0f, 400.0f);
-		if (shouldReset) {
-			reset();
-			shouldReset = false;
-		}
+		oscEngine.send(1,0.f, 0.f,960.0f, 400.0f,0,0);
+
 	}
 	drawMod = oscEngine.isPlayed;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	ofBackgroundGradient(ofColor(0.f,0.f,0.f), ofColor(40.f,39.0f,38.f),OF_GRADIENT_LINEAR);
-	if (!kinectEngine.isEmpty && kinectEngine.inPosition) {
+	ofBackgroundGradient(ofColor(0.f,0.f,0.f), ofColor(50.f,50.0f,75.f),OF_GRADIENT_LINEAR);
+	
+	if (!kinectEngine.isEmpty && kinectEngine.inPosition&&kinectEngine.isStreamed) {
 		float tempHead = abs(960.0f - kinectEngine.head.x) / 960;
 		if (drawMod == 0) {
 			shapeExpand.drawRectFromPosition(oscEngine.smoothed, kinectEngine.leftHand, kinectEngine.rightHand);
@@ -113,7 +116,7 @@ void ofApp::draw(){
 			bodyExpand.draw(oscEngine.ampList);
 		}
 		else if (drawMod == 2) {
-			singleLine.draw(oscEngine.smoothed);
+			singleLine.draw(oscEngine.smoothed,kinectEngine.leftHand,kinectEngine.rightHand);
 			multipleBodies.draw1(oscEngine.smoothed);
 			bodyMasker.draw3(tempHead, oscEngine.smoothed);
 		}
@@ -128,7 +131,7 @@ void ofApp::draw(){
 		}
 		else if (drawMod == 5) {
 			blocks.drawRect2(kinectEngine.leftHand,kinectEngine.rightHand,oscEngine.smoothed);
-			multipleBodies.draw3(oscEngine.smoothed);
+			multipleBodies.draw3(oscEngine.smoothed,kinectEngine.leftHand,kinectEngine.rightHand);
 		}
 		else if (drawMod == 6) {
 			amebaCircle.draw2(kinectEngine.leftHand, kinectEngine.rightHand, kinectEngine.head);
@@ -146,26 +149,8 @@ void ofApp::draw(){
 		rectMotion.draw();
 		titlePage.draw();
 	}
+	
 
 	kicked = false;
 	snared = false;
-}
-
-void ofApp::reset()
-{
-	titlePage.setup();
-	bodyMasker.set(1);
-	firework.setup();
-	fallingParticle.setup();
-	rectMotion.setup();
-	bodyExpand.setup();
-	multipleBodies.setup();
-	shapeExpand.setup();
-	singleLine.setup();
-	arms.setup(100, 90);
-	blocks.setup();
-	sand.setup();
-	amebaCircle.setup();
-	beach.setup();
-	endPage.setup();
 }

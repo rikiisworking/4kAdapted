@@ -37,7 +37,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-		void reset();
+
 		kinectEngine kinectEngine;
 		oscEngine oscEngine;
 		soundAnalyzer soundAnalyzer;
@@ -63,12 +63,14 @@ class ofApp : public ofBaseApp{
 		soundBeach beach;
 		endPage endPage;
 
+
+
 		bool kicked;
 		bool snared;
 
 		int drawMod;
 
-		bool shouldReset;
+		bool isMusicPlaying;
 
 		ofTrueTypeFont font;
 };

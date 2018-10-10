@@ -48,14 +48,15 @@ void amebaCircle::draw()
 void amebaCircle::draw2(ofVec2f lHand, ofVec2f rHand, ofVec2f head)
 {
 	float scaleRate = ofMap(ofDist(lHand.x, lHand.y, rHand.x, rHand.y), 0, 1920.f, 0.8f, 3.5f, true);
-	float movePos = ofMap(head.x, 0, 1920, 150.0f, -150.0f, true);
+	float movePos = ofMap(head.x, 0, 1920, 250.0f, -250.0f, true);
+	float height = ofMap(lHand.y + rHand.y, 0, 2160, -100.f, 100.f);
 	shader.begin();
 	shader.setUniform4f("inputColor1", ofFloatColor(ofColor(5, 20, 245)));
 	shader.setUniform4f("inputColor2", ofFloatColor(ofColor(0, 235, 180)));
 	ofPushMatrix();
 	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
 	ofScale(scaleRate, scaleRate);
-	ofTranslate(movePos, 0);
+	ofTranslate(movePos, height);
 	ofTranslate(-ofGetWidth() / 2, -ofGetHeight() / 2);
 	
 	ofBeginShape();

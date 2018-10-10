@@ -59,6 +59,27 @@ void bodyExpand::update(float * fft, bool kicked, ofPath path)
 	}
 }
 
+void bodyExpand::update(bool kicked, bool snared, ofPath path)
+{
+	ofPath temp = path;
+	temp.setStrokeWidth(1.0f);
+
+	if (snared|| kicked) {
+		bodyParticles.push_back(bodyExpandParticle(temp));
+		bodyParticles.push_back(bodyExpandParticle(temp));
+		bodyParticles.push_back(bodyExpandParticle(temp));
+		bodyParticles.push_back(bodyExpandParticle(temp));
+		bodyParticles.push_back(bodyExpandParticle(temp));
+	}
+	for (int i = bodyParticles.size() - 1; i >= 0; i--) {
+		bodyParticles[i].update(kicked);
+		if (bodyParticles[i].isAlive == false) {
+			bodyParticles[i].bodyPath.clear();
+			bodyParticles.erase(bodyParticles.begin() + i);
+		}
+	}
+}
+
 void bodyExpand::draw(float*fft)
 {
 	bodyExpandShader.begin();

@@ -8,6 +8,7 @@ public:
 	void update(bool kick, ofPath path);
 	void update(float* fft, ofPath path);
 	void update(float*fft, bool kicked, ofPath path);
+	void update(bool kicked, bool snared, ofPath path);
 	void draw(float* fft);
 
 	ofShader bodyExpandShader;

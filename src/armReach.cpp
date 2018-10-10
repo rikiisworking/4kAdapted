@@ -63,7 +63,7 @@ void armReach::draw2(float x, float y, ofVec2f lHand, ofVec2f rHand, float * sou
 	ofPushMatrix();
 	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
 	ofScale(tempScale, tempScale);
-	ofRotate(lHand.angle(rHand) / 4.0f);
+	ofRotate((lHand.angle(rHand)+12.5f) / 4.0f);
 	ofTranslate(-ofGetWidth() / 2, -ofGetHeight() / 2);
 	for (int i = 0; i < ofGetWidth() / wInterval; i++) {
 		for (int i2 = 0; i2 < ofGetHeight() / hInterval; i2++) {

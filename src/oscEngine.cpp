@@ -51,3 +51,16 @@ void oscEngine::send(int status, float leftz, float rightz, float headx, float h
 	sender.sendMessage(m, false);
 }
 
+void oscEngine::send(int status, float leftz, float rightz, float headx, float handDist, float ly, float ry)
+{
+	ofxOscMessage m;
+	m.addIntArg(status);
+	m.addFloatArg(leftz);
+	m.addFloatArg(rightz);
+	m.addFloatArg(headx);
+	m.addFloatArg(handDist);
+	m.addFloatArg(ly);
+	m.addFloatArg(ry);
+	sender.sendMessage(m, false);
+}
+

@@ -7,7 +7,7 @@ void soundAnalyzer::setup(float * fft)
 	refreshRate = 185.0f;
 	time1 = clock();
 	currentKick = fft[1];
-	currentSnare = fft[15];
+	currentSnare = fft[25];
 }
 
 
@@ -24,8 +24,8 @@ void soundAnalyzer::update(float * fft)
 		}
 		if (!snareSwitch) {
 			previousSnare = currentSnare;
-			currentSnare = fft[15];
-			if (currentSnare - previousSnare > 0.15f) {
+			currentSnare = fft[25];
+			if (currentSnare - previousSnare > 0.085f) {
 				snareSwitch = true;
 			}
 		}

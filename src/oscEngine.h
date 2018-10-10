@@ -23,4 +23,5 @@ public:
 	void recieve();
 	void send(int status, float leftz, float rightz);
 	void send(int status, float leftz, float rightz, float headx, float handDist);
+	void send(int status, float leftz, float rightz, float headx, float handDist, float ly, float ry);
 };

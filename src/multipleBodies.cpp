@@ -61,8 +61,9 @@ void multipleBodies::draw2(float * amps)
 	shaderEnd();
 }
 
-void multipleBodies::draw3(float* amps)
+void multipleBodies::draw3(float* amps, ofVec2f lHand, ofVec2f rHand)
 {
+	float tempScale = ofMap(ofDist(lHand.x, lHand.y, rHand.x, rHand.y), 5.0f, 1920.0f, 1.0f, 1.75f, true);
 	shaderBegin(blue1, blue2, green1, green2,amps);
 	if (bodyDelayPath.size() >= 50) {
 		for (int i = 0; i < 40; i++) {
@@ -72,7 +73,7 @@ void multipleBodies::draw3(float* amps)
 			ofRotate(ofGetElapsedTimef()*10+(float)i / 40 * 365);
 			bodyDelayPath[i].draw(0.f, 0.f);
 			ofRotate(-ofGetElapsedTimef() * 20);
-			bodyDelayPath[i].draw(500.0f, 0.f);
+			bodyDelayPath[i].draw(500.0f*tempScale, 0.f);
 			ofPopMatrix(); 
 		}
 	}

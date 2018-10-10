@@ -5,20 +5,20 @@ class fallingParticle {
 public:
 	void setup();
 	void update(ofPolyline line,bool kicked);
-	void update(ofPolyline line, bool kicked, ofVec2f lHandPos, ofVec2f rHandPos, int lHandState, int rHandState);
+	void update(bool kicked, ofVec2f lHandPos, ofVec2f rHandPos, int lHandState, int rHandState);
+	void update(bool kicked, ofVec2f lHandPos, ofVec2f rHandPos, int lHandState, int rHandState,float lz,float rz);
 	void draw(float* amps);
-
+	
 	ofShader particleShader;
 
 	ofxBox2d box2d;
-	ofxBox2dEdge  edgeLine;
-	vector<shared_ptr<ofxBox2dCircle>> circles;
-	vector<ofFloatColor> colors;
-	vector<float> lifes;
-	vector<float> sizes;
-	int number_of_targets;
+	
+	ofxBox2dCircle circles[200];
+	ofFloatColor colors[200];
+	float lifes[200];
+	float sizes[200];
 
 	int currentColor;
 	ofVec3f shaderColor;
-	//ofVec3f currentColor;
+
 };

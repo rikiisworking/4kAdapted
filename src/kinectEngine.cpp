@@ -24,10 +24,12 @@ void kinectEngine::set()
 	trackingId = 0;
 	isStreamed = false;
 	inPosition = false;
+
 }
 
 void kinectEngine::update()
 {
+	
 	if (!kinect.getBodyIndexSource()->getPixels().size()) {if (isStreamed) {isStreamed = false;}}
 	else {if (!isStreamed) {isStreamed = true;}}
 
@@ -35,7 +37,7 @@ void kinectEngine::update()
 	kinect.update();
 	{
 		auto bodies = kinect.getBodySource()->getBodies();
-
+		
 		for (auto body : bodies) {if (body.tracked) {bodiesSortedByAge[body.trackingId] = body;}}
 		if (!bodiesSortedByAge.empty()) {
 			if (isEmpty) {isEmpty = false;}
@@ -53,7 +55,7 @@ void kinectEngine::update()
 	
 			lHandState = firstBody.leftHandState;			//open=2 closed=3;
 			rHandState = firstBody.rightHandState;
-			if (firstBody.joints[JointType_Head].getPosition().z > 3.5f) {
+			if (firstBody.joints[JointType_Head].getPosition().z > 3.5f || firstBody.joints[JointType_Head].getPosition().z < 0.5f) {
 				if (inPosition) {inPosition = false;}
 			}else {
 				if (!inPosition) {inPosition = true;}
