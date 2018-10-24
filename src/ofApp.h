@@ -26,10 +26,12 @@
 
 #include "endPage.h"
 
+#include "requireInPosition.h"
 //engine
 #include "kinectEngine.h"
 #include "soundAnalyzer.h"
 #include "oscEngine.h"
+#include "arduino.h"
 
 class ofApp : public ofBaseApp{
 
@@ -62,8 +64,9 @@ class ofApp : public ofBaseApp{
 		amebaCircle amebaCircle;
 		soundBeach beach;
 		endPage endPage;
+		arduino arduino;
 
-
+		requireInPosition inPosition;
 
 		bool kicked;
 		bool snared;

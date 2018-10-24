@@ -55,7 +55,9 @@ void kinectEngine::update()
 	
 			lHandState = firstBody.leftHandState;			//open=2 closed=3;
 			rHandState = firstBody.rightHandState;
-			if (firstBody.joints[JointType_Head].getPosition().z > 3.5f || firstBody.joints[JointType_Head].getPosition().z < 0.5f) {
+
+			headZ = firstBody.joints[JointType_Head].getPosition().z;
+			if (firstBody.joints[JointType_Head].getPosition().z > 2.6f || firstBody.joints[JointType_Head].getPosition().z < 1.6f) {
 				if (inPosition) {inPosition = false;}
 			}else {
 				if (!inPosition) {inPosition = true;}

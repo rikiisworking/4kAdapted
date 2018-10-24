@@ -59,8 +59,8 @@ void shapeExpanding::drawRectFromPosition(float * amps,ofVec2f lHand,ofVec2f rHa
 		ofPushMatrix();
 		ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
 		//float tempRotation = ofMap(ofDist(rHand.x, rHand.y, ofGetWidth() / 2, ofGetHeight() / 2), 0.f, 1101.45f, 1.f, 5.f, true);
-		float tempRotation = lHand.angle(rHand)/35;
-		ofRotate((angle + sizes[i] / 5)*tempRotation);
+		float tempRotation = lHand.angle(rHand)/50;
+		ofRotate((angle + sizes[i] / 15)*tempRotation);
 		float tempScale = ofMap(ofDist(lHand.x,lHand.y, rHand.x, rHand.y), 0.f, 1101.45f, 2.0f, 5.5f, true);
 		ofScale(ofPoint(tempScale, tempScale));
 		ofDrawRectangle(0, 0, sizes[i], sizes[i]);

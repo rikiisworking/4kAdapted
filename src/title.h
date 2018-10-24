@@ -8,6 +8,7 @@ public:
 
 	ofTrueTypeFont bold;
 	ofTrueTypeFont reg;
+	ofTrueTypeFont sd;
 	ofImage logoImage;
 
 	ofImage image;
@@ -18,5 +19,6 @@ public:
 	void setup();
 
 	void draw3(float* sound, bool kicked);
+	void draw(string s);
 	void draw();
 };

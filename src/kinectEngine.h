@@ -10,14 +10,16 @@ public:
 	ofVec3f leftHandRelative, rightHandRelative;
 	map<JointType, ofVec2f> projectedJoints;
 
-	bool isEmpty;
+	
 	int trackingId;
 
 	void set();
 	void update();
 	auto getNearestBody(map<int, ofxKinectForWindows2::Data::Body> bodies);
 
+	bool isEmpty;
 	bool isStreamed;
 	bool inPosition;
+	float headZ;
 	int lHandState, rHandState;
 };

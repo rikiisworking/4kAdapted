@@ -2,10 +2,10 @@
 
 void sandParticle::setup()
 {
-	particlePosition.reserve(4000);
-	velocity.reserve(4000);
-	particleSize.reserve(4000);
-	for (int i = 0; i < 4000; i++) {
+	particlePosition.reserve(3500);
+	velocity.reserve(3500);
+	particleSize.reserve(3500);
+	for (int i = 0; i < 3500; i++) {
 		particlePosition.push_back(ofVec2f(ofRandom(0, ofGetWidth()), (ofRandom(0, ofGetHeight()))));
 		velocity.push_back(ofVec2f(0, 0));
 		particleSize.push_back(ofRandom(1.0f, 2.5f));
@@ -17,7 +17,7 @@ void sandParticle::setup()
 
 void sandParticle::update(float * fft, bool kicked)
 {
-	for (int i = 0; i < 4000; i++) {
+	for (int i = 0; i < 3500; i++) {
 		if (kicked) {
 			particleSize[i] = particleSize[i] + 4.0f;
 		}
@@ -115,7 +115,7 @@ void sandParticle::draw2(ofVec2f lHand, ofVec2f rHand, ofVec2f head)
 	ofTranslate(-ofGetWidth() / 2, -ofGetHeight() / 2);
 	ofTranslate(movePos, 0);
 	ofSetCircleResolution(10);
-	for (int i = 0; i < 4000; i++) {
+	for (int i = 0; i < 3500; i++) {
 		ofCircle(particlePosition[i], particleSize[i]);
 	}
 	

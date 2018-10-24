@@ -89,7 +89,7 @@ void soundBeach::setup()
 void soundBeach::update(bool kick, float * fft)
 {
 	updateParticles();
-	int genPower = (int)ofMap(fft[1], 0.0f, 1.0f, 1,5);
+	int genPower = (int)ofMap(fft[1], 0.0f, 1.0f, 1,4,true);
 
 	for (int i = 0; i<genPower; i++) {
 		generateParticles();
